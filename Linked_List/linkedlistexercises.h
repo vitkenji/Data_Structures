@@ -7,4 +7,5 @@ void print_reverse (List *l);
 int similar (List *A, List *B);
 List* intersection (List *A, List *B);
 List* insert_back (List *l, int data);
+List* insert_sort (List *l, int k);
 

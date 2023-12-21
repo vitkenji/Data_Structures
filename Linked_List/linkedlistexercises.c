@@ -42,6 +42,8 @@ int max (List *l)
 
 void print_reverse (List *l)
 {
+    if(l->next != NULL){print_reverse(l->next);}
+    printf("%d ", l->data);
 
 }
 
@@ -79,4 +81,57 @@ List* insert_back (List *l, int data)
 
     return node;
 
+}
+
+List* insert_sort (List *l, int k)
+{
+    List* t = l; List* p = NULL;
+
+    if(t == NULL){ return insert(l, k); }
+    
+    while(t->data < k && t->next !=  NULL)
+    {
+        p = t;
+        t = t->next;
+
+    }
+
+  List* node = (List*)malloc(sizeof(List));
+  node->data = k;
+
+  if(t->next == NULL && p != NULL) // fim da lista ->maior
+  {
+    t->next = node;
+    node->next = NULL;
+    return l;
+  }
+
+  else if(p == NULL && t->next != NULL) // inicio da lista ->menor
+  {
+    node->next = l;
+    return node;
+  }
+
+  //exceptions-> second insertion
+  else if(t->next == NULL && p == NULL)
+  {
+    if(t->data  < k)
+    {
+        t->next = node;
+        node->next = NULL;
+        return t;
+    }
+    else
+    {
+        node->next = t;
+        return node;
+    }
+  }
+
+  else
+  {
+    node->next = t;
+    p->next = node;
+    return l;
+  }
 }
