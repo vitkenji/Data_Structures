@@ -59,6 +59,7 @@
   "files.associations": {
     "stdio.h": "c",
     "queue.h": "c",
-    "time.h": "c"
+    "time.h": "c",
+    "stackexercises.h": "c"
   }
 }

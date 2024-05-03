@@ -10,9 +10,9 @@ typedef struct
 
 }Queue;
 
-Queue* create(int size);
-int full(Queue* q);
-int empty(Queue* q);
+Queue* createQueue(int size);
+int fullQueue(Queue* q);
+int emptyQueue(Queue* q);
 int front(Queue* q);
 void enqueue(Queue* q, int data);
 int dequeue(Queue* q);

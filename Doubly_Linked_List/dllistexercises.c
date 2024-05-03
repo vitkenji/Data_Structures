@@ -21,5 +21,17 @@ DLList* split(DLList *l,int x, int y)
         lx= insertBack(lx, t->data);
         t = t->next;
     }
+    lx = insertBack(lx, t->data);
     return lx;
+}
+
+DLList* insert_back (DLList *l, int elem)
+{
+    DLList* node = (DLList*)malloc(sizeof(DLList));
+        node->data = elem;
+        node->next = l;
+        node->prev = NULL;
+        if(l != NULL){l->prev = node;}
+        return node;
+
 }

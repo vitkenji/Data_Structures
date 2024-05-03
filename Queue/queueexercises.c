@@ -1,14 +1,14 @@
-#include "exercises.h"
+#include "queueexercises.h"
 #include <time.h>
 #define N 10
 
 void oddEven(Queue* q)
 {
-    Queue* odd = create(N);
-    Queue* even = create(N);
+    Queue* odd = createQueue(N);
+    Queue* even = createQueue(N);
     int data;
 
-    while(!empty(q))
+    while(!emptyQueue(q))
     {
         data = dequeue(q);
         if(data % 2 == 0){enqueue(even, data);}
@@ -24,9 +24,9 @@ void oddEven(Queue* q)
 void casino()
 {
     srand(time(NULL));
-    Queue* q1 = create(N);
-    Queue* q2 = create(N);
-    Queue* q3 = create(N);
+    Queue* q1 = createQueue(N);
+    Queue* q2 = createQueue(N);
+    Queue* q3 = createQueue(N);
     int data;
     int result1, result2, result3;
     int key;
@@ -56,9 +56,9 @@ void casino()
         printf("\n");
         scanf("%d", &key);
 
-        while(!empty(q1)){data = dequeue(q1);}
-        while(!empty(q2)){data = dequeue(q2);}
-        while(!empty(q3)){data = dequeue(q3);}
+        while(!emptyQueue(q1)){data = dequeue(q1);}
+        while(!emptyQueue(q2)){data = dequeue(q2);}
+        while(!emptyQueue(q3)){data = dequeue(q3);}
     }
 }
 
@@ -75,9 +75,9 @@ void timeComplexity()
 
 Queue* merge (Queue *a, Queue *b)
 {
-    Queue* q = create(a->size + b->size);
+    Queue* q = createQueue(a->size + b->size);
 
-    while(!empty(a) && !empty(b))
+    while(!emptyQueue(a) && !emptyQueue(b))
     { 
         if(front(a) < front(b))
         {
@@ -91,17 +91,17 @@ Queue* merge (Queue *a, Queue *b)
         }
     }
 
-    if(empty(a))
+    if(emptyQueue(a))
     {
-        while(!empty(b))
+        while(!emptyQueue(b))
         {
             enqueue(q, dequeue(b));
         }
     }
 
-    else if(empty(b))
+    else if(emptyQueue(b))
     {
-        while(!empty(a))
+        while(!emptyQueue(a))
         {
             enqueue(q, dequeue(a));
           
@@ -115,12 +115,12 @@ Queue* merge (Queue *a, Queue *b)
 
 void JosephusProblem(int size, int death)
 {
-    Queue* q = create(50);
+    Queue* q = createQueue(50);
     for(int i = 1; i <= size; i++){enqueue(q, i);}
 
-    Queue* alive = create(50);
+    Queue* alive = createQueue(50);
 
-    while(!empty(q))
+    while(!emptyQueue(q))
     {
         for(int i = 0; i < death - 1; i++)
         {
@@ -136,12 +136,12 @@ void JosephusProblem(int size, int death)
 
 Queue* reverse (Queue *q)
 {
-    Queue* t = create(50);
-    Queue* r = create(50);
+    Queue* t = createQueue(50);
+    Queue* r = createQueue(50);
     int size = 0;
     int aux = 0;
 
-    while(!empty(q))
+    while(!emptyQueue(q))
     {
         enqueue(t, dequeue(q));
         size++;
@@ -153,7 +153,7 @@ Queue* reverse (Queue *q)
         for(int j = 0; j < aux - 1; j++) { enqueue(q, dequeue(t)); }
         enqueue(r, dequeue(t));
         aux--;
-        while(!empty(q)){ enqueue(t, dequeue(q)); }
+        while(!emptyQueue(q)){ enqueue(t, dequeue(q)); }
    
     }
 

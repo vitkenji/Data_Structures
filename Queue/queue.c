@@ -1,6 +1,6 @@
 #include "queue.h"
 
-Queue* create(int size)
+Queue* createQueue(int size)
 {
     Queue* q = (Queue*) malloc(sizeof(Queue));
     q->array = (int*) malloc(sizeof(int)*size);
@@ -12,13 +12,13 @@ Queue* create(int size)
 
 }
 
-int full(Queue* q)
+int fullQueue(Queue* q)
 {
-    return (q->front == (q->back + 1) % q->size);
+    return (q->front == ((q->back + 1) % q->size));
 
 }
 
-int empty(Queue* q)
+int emptyQueue(Queue* q)
 {
     return (q->front == q->back);   
 
@@ -31,7 +31,7 @@ int front(Queue* q)
 
 void enqueue(Queue* q, int data)
 {
-    if(full(q))
+    if(fullQueue(q))
     {
         printf("error: full queue");
         exit(1);
@@ -45,7 +45,7 @@ void enqueue(Queue* q, int data)
 
 int dequeue(Queue* q)
 {
-    if(empty(q))
+    if(emptyQueue(q))
     {
         printf("error: empty queue");
         exit(1);

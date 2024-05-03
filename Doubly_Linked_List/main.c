@@ -3,12 +3,12 @@
 int main()
 {
     DLList* l = create();
-    for(int i = 0; i < 10; i++)
+    for(int i = 10; i >= 0; i++)
     {
         l = insertBack(l, i);
     }
     printDLList(l);
-    l = split(l, 7, 3);
+    l = split(l, 3, 7);
     printDLList(l);
     return 0;
 

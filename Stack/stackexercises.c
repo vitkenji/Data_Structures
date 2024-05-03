@@ -91,8 +91,7 @@ void prime_factorization (int n)
 
 }
 
-
-
+void game (Stack *stack_player_a, Stack *stack_player_b)
 {
     printStack(stack_player_a);
     printStack(stack_player_b);

@@ -1,19 +1,14 @@
 #include "stackexercises.h"
 #include <time.h>
-
+//ok 
 int main()
 {
-    srand(time(NULL));
+    Stack* s = createStack(3);
+    push(s, 1);
+    push(s, 2);
+    push(s, 3);
+       
+    printStack(s);
 
-    Stack* stackA = createStack(50);
-    Stack* stackB = createStack(50);
-
-    for(int i = 0; i < 10; i++)
-    {
-        push(stackA, rand()%10);
-        push(stackB, rand()%10);
-    }
-    game(stackA, stackB);
-    
    return 0;
 }
