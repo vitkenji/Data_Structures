@@ -8,12 +8,13 @@ int main()
     int k = 10;
     for(int i = 0; i < SIZE; i++)
     {
-        array[i] = rand()%30;
+        array[i] = k;
+        k--;
     }
 
    printArray(array, SIZE);
     
-   mergeSort(array, 0, SIZE);
+   mergeSort(array, 0, SIZE - 1);
 
     printArray(array, SIZE);
 

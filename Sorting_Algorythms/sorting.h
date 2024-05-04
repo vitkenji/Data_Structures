@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <limits.h>
 
 void bubbleSort(int* array, int size);
 void selectionSort(int* array, int size);

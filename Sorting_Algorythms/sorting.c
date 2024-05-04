@@ -32,6 +32,7 @@ void insertionSort(int* array, int size)
 
 void mergeSort(int* array, int p, int r) //0 8
 {
+  
     if(p < r)
     {
         int q = (p + r) / 2;
@@ -41,29 +42,31 @@ void mergeSort(int* array, int p, int r) //0 8
     }
 }
                                 
-void merge(int* array, int p, int q, int r) // 0 4 8
+void merge(int* array, int p, int q, int r) // 0 4 8 
 {  
-    int n1 = q - p + 1; // 5
-    int n2 = r - q; // 4
+    int n1 = q - p + 1; 
+    int n2 = r - q; 
 
-    int* L = (int*) malloc(sizeof(int)*n1);
-    int* R = (int*) malloc(sizeof(int)*n2);
+    int* L = (int*) malloc(sizeof(int)*(n1+1));
+    int* R = (int*) malloc(sizeof(int)*(n2+1));
 
     for(int i = 0; i < n1; i++) //
     {
-        L[i] = array[i];
+        L[i] = array[p + i];
     }
-    printArray(L, n1);
+
 
     for(int j = 0; j < n2; j++)
     {
         R[j] = array[q + 1 + j];
     }
-    printArray(R, n2);
     
-    int i = 0; int j = 0;
 
-    for(int k = p; k < r; k++)
+    L[n1] = INT_MAX;
+    R[n2] = INT_MAX;
+
+    int i = 0; int j = 0;
+    for(int k = p; k <= r; k++)
     {
        if(L[i] < R[j])
        {

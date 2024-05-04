@@ -60,6 +60,7 @@
     "stdio.h": "c",
     "queue.h": "c",
     "time.h": "c",
-    "stackexercises.h": "c"
+    "stackexercises.h": "c",
+    "sorting.h": "c"
   }
 }
