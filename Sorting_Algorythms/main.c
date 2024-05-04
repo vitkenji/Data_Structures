@@ -10,11 +10,12 @@ int main()
     {
         array[i] = k;
         k--;
+        
     }
 
    printArray(array, SIZE);
-    
-   mergeSort(array, 0, SIZE - 1);
+    printf("selectionSort: \n");
+   selectionSort(array, SIZE);
 
     printArray(array, SIZE);
 

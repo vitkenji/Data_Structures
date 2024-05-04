@@ -14,6 +14,23 @@ void bubbleSort(int* array, int size)
     }
 }
 
+void selectionSort(int* array, int size)
+{
+    int min;
+    for(int i = 0; i < size; i++)
+    {
+        min = i;
+        for(int j = i + 1; j < size; j++)
+        {
+            if(array[j] < array[min])
+            {
+                min = j;
+            }
+        }
+        swap(array, min, i);
+    }
+}
+
 void insertionSort(int* array, int size)
 {
     int i, key;
@@ -28,6 +45,33 @@ void insertionSort(int* array, int size)
         }
         array[i + 1] = key;
     }
+}
+
+void quickSort(int* array, int low, int high)
+{
+    if(low < high)
+    {
+        int pi = partition(array, low,high);
+        quickSort(array, low, pi - 1);
+        quickSort(array, pi + 1, high);
+
+    }
+}
+
+int partition(int* array, int low, int high)
+{
+    int pivot = array[high];
+    int i = low - 1;
+    for(int j = low; j <= high; j++)
+    {
+        if(array[j] < pivot)
+        {
+            i++;
+            swap(array, i, j);
+        }
+    }
+    swap(array, i + 1, high);
+    return (i + 1);
 }
 
 void mergeSort(int* array, int p, int r) //0 8
@@ -82,6 +126,8 @@ void merge(int* array, int p, int q, int r) // 0 4 8
 
 
 }
+
+
 
 void printArray(int* array, int size)
 {
