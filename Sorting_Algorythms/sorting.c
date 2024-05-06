@@ -127,6 +127,50 @@ void merge(int* array, int p, int q, int r) // 0 4 8
 
 }
 
+void countingSort(int* array, int size)
+{
+    int max = -1;
+    for(int i = 0; i < size; i++)
+    {
+        if(array[i] > max)
+        {
+            max = array[i];
+        }
+    }
+
+    int* countArray = (int*) malloc(sizeof(int)*(max + 1));
+
+    for(int i = 0; i <= max; i++)
+    {
+        countArray[i] = 0;
+    }
+
+    for(int i = 0; i < size; i++)
+    {
+        countArray[array[i]]++;
+    }
+
+    for(int i = 1; i <= max; i++)
+    {
+        countArray[i] += countArray[i - 1];
+    }
+    
+    int* outputArray = (int*) malloc(sizeof(int)*size);
+    for(int i = size - 1; i >= 0; i--)
+    {
+        outputArray[countArray[array[i]] - 1] = array[i];
+        countArray[array[i]]--;
+    }
+
+    for(int i = 0; i < size; i++)
+    {
+        array[i] = outputArray[i];
+    }
+
+    free(countArray);
+    free(outputArray);
+
+}
 
 
 void printArray(int* array, int size)

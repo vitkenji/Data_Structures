@@ -14,9 +14,7 @@ int main()
     }
 
    printArray(array, SIZE);
-    printf("selectionSort: \n");
-   selectionSort(array, SIZE);
-
+   countingSort(array, SIZE);
     printArray(array, SIZE);
 
     free(array);
