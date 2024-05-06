@@ -139,7 +139,6 @@ void countingSort(int* array, int size)
     }
 
     int* countArray = (int*) malloc(sizeof(int)*(max + 1));
-
     for(int i = 0; i <= max; i++)
     {
         countArray[i] = 0;

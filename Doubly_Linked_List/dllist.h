@@ -13,4 +13,5 @@ DLList* create();
 DLList* insertFront(DLList* l, int data);
 DLList* insertBack(DLList* l, int data);
 DLList* search(DLList* l, int data);
+DLList* removeData(DLList* l, int data);
 void printDLList(DLList* l);

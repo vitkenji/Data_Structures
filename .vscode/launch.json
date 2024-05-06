@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/vitor.yamada/data_structures/Doubly_Linked_List",
-      "program": "c:/Users/vitor.yamada/data_structures/Doubly_Linked_List/build/Debug/outDebug",
+      "cwd": "c:/Users/vitor.yamada/data_structures/Sorting_Algorythms",
+      "program": "c:/Users/vitor.yamada/data_structures/Sorting_Algorythms/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

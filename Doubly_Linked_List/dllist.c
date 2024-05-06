@@ -23,7 +23,6 @@ DLList* insertFront(DLList* l, int data)
     node->data = data;
     node->next = NULL;
     
-
     DLList* t = l;
     while(t->next != NULL){t = t->next;}
     t->next = node;
@@ -54,9 +53,19 @@ DLList* search(DLList* l, int data)
         DLList* t = l;
         while(t != NULL)
         {
-            if(t->data = data){return t;}
+            if(t->data == data)
+            {
+                printf("found");
+                return t;
+            }
             t = t->next;
         }
     }
+    printf("not found");
     return NULL;
+}
+
+DLList* removeData(DLList* l, int data)
+{
+
 }
