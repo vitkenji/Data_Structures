@@ -123,3 +123,19 @@ int calculateHeight(Tree* t)
     }
     return 0;
 }
+
+int sumLeaves(Tree* t)
+{
+    if(t != NULL)
+    {
+         if(t->left == NULL && t->right == NULL)
+        {
+            return t->data;
+        }
+         else
+        {
+            return sumLeaves(t->left) + sumLeaves(t->right);
+        }
+    }
+    return 0;
+}

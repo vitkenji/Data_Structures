@@ -21,4 +21,4 @@ int search(Tree*, int data);
 int countNodes(Tree* t);
 int calculateHeight(Tree* t);
 int countLeaves(Tree* t);
-
+int sumLeaves(Tree* t);
