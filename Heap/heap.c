@@ -54,7 +54,7 @@ void minHeapify(int* array, int size, int index)
     int r = right(index);
     int smallest;
 
-    if(l < size && array[l] < array[index])
+    if(l < size && array[l] < array[index]) // which one is smaller: left or parent
     {
         smallest = l;
     }
@@ -63,14 +63,14 @@ void minHeapify(int* array, int size, int index)
         smallest = index;
     }
 
-    if(r < size && array[r] < array[smallest])
+    if(r < size && array[r] < array[smallest]) // which one is smaller: left, parent, or right
     {
         smallest = r;
     }
     if(smallest != index)
     {
-        swap(array, smallest, index);
-        minHeapify(array, size, smallest);
+        swap(array, smallest, index); // places the smallest in parent position
+        minHeapify(array, size, smallest); 
     }
 }
 

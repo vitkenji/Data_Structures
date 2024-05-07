@@ -1,5 +1,6 @@
 #include "heap.h"
 #define SIZE 10
+
 int main()
 {
     int* array = (int*) malloc(sizeof(int)*SIZE);
