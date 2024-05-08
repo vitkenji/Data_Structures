@@ -61,6 +61,7 @@
     "queue.h": "c",
     "time.h": "c",
     "stackexercises.h": "c",
-    "sorting.h": "c"
+    "sorting.h": "c",
+    "priorityqueue.h": "c"
   }
 }
