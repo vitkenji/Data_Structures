@@ -23,4 +23,11 @@ typedef struct Mgraph{
 }MGraph;
 
 void printLGraph(LGraph* G, int size);
+LGraph* createLGraph(int size);
+void insertEdgeListDiretional(LGraph* G, int index, int data);
+
+
 void printMGraph(MGraph* G, int size);
+MGraph* createMGraph(int size);
+void insertWeightEdgeMatrix(MGraph* G, int v1, int v2, int weight);
+void insertEdgeMatrix(MGraph* G, int v1, int v2);
