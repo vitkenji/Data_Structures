@@ -3,10 +3,11 @@
 Queue* createQueue(int size)
 {
     Queue* q = (Queue*) malloc(sizeof(Queue));
-    q->array = (int*) malloc(sizeof(int)*size);
+    q->array = (int*) malloc(sizeof(int)*(size + 1));
     q->size = size;
     q->front = 0;
     q->back = 0;
+    q->array[size] = '\0';
 
     return q;
 

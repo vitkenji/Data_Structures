@@ -6,13 +6,12 @@
 int main()
 {
     Queue* q = createQueue(10);
-    enqueue(q, 2);
-    int x = dequeue(q);
-    printQueue(q);
-    enqueue(q, 4);
-    printQueue(q);
-
     
-    
+    for(int i = 0; i < 9; i++)
+    {
+	enqueue(q, i);
+    }
+    printQueue(q);
+  
 }
 
