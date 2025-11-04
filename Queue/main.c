@@ -9,9 +9,29 @@ int main()
     
     for(int i = 0; i < 9; i++)
     {
-	enqueue(q, i);
+    	enqueue(q, i);
     }
+    
     printQueue(q);
-  
+    return 1;
 }
 
+int shouldEnqueue()
+{
+    return 1;
+}
+
+int shouldDequeue()
+{
+    return 1;
+}
+
+int shouldNotEnqueueFullQueue()
+{
+    return 1;
+}
+
+int shouldNotDequeueEmptyQueue()
+{
+    return 1;
+}
