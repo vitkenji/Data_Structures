@@ -31,22 +31,6 @@ void timeComplexity()
     */
 }
 
-void reverse (Queue *q)
-{
-    Stack* s = createStack(50);
-    while(!emptyQueue(q))
-    {
-        push(s, dequeue(q));
-
-    }
-    while(!emptyStack(s))
-    {
-        enqueue(q, pop(s));
-
-    }
-   
-}
-
 void prime_factorization (int n)
 {
    int fac, isPrime, div, original = n;
