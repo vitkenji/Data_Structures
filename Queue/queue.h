@@ -7,7 +7,7 @@ typedef struct
     int size;
     int front;
     int back;
-
+    
 }Queue;
 
 Queue* createQueue(int size);
