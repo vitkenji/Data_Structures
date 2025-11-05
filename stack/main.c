@@ -93,5 +93,5 @@ int main()
     printf("%d Tests passed\n", tests_passed);
     printf("%d Tests failed\n", tests_failed);
 
-    return 1;
+    return 0;
 }
