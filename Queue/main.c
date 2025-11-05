@@ -1,11 +1,8 @@
-#include "queueexercises.h"
-#include <time.h>
-
-#define N 10
+#include "queue.h"
 
 int shouldEnqueue()
 {
-    Queue* q = createQueue(N);
+    Queue* q = createQueue(5);
 
     for(int i = 0; i < 5; i++)
     {
@@ -20,7 +17,7 @@ int shouldEnqueue()
 
 int shouldDequeue()
 {
-    Queue* q = createQueue(N);
+    Queue* q = createQueue(5);
 
     enqueue(q,12);
 
@@ -33,7 +30,7 @@ int shouldDequeue()
 
 int shouldReturnIfEmptyQueue()
 {
-    Queue* q = createQueue(N);
+    Queue* q = createQueue(5);
     return emptyQueue(q);
 }
 
