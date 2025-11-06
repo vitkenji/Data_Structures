@@ -1,5 +1,5 @@
 all:
-	gcc main.c linkedlist.c linkedlistexercises.c -o main
+	gcc main.c linkedlist.c exercises.c -o main
 
 run: all
 	./main

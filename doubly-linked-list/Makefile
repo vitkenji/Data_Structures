@@ -1,5 +1,5 @@
 all:
-	gcc main.c dllist.c dllistexercises.c -o main
+	gcc main.c dllist.c exercises.c -o main
 
 run: all
 	./main

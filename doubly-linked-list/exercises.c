@@ -1,8 +1,8 @@
-#include "dllistexercises.h"
+#include "exercises.h"
 
 DLList* mistery (DLList *l, int elem)
 {
-    DLList *node = search (l, elem); // searches a node
+    DLList *node = search (l, elem);
     if (node == NULL) { return l; }
     if (l == node) { l = node->next; }
     if (node->next != NULL) { node->next->prev = node->prev; }

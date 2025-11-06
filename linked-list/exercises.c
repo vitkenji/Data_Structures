@@ -1,4 +1,4 @@
-#include "linkedlistexercises.h"
+#include "exercises.h"
 
 int sum (List *l)
 {

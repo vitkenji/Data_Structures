@@ -1,5 +1,4 @@
-#include "linkedlistexercises.h"
-#include <time.h>
+#include "linkedlist.h"
 
 int main()
 {

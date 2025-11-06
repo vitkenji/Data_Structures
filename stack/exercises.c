@@ -1,4 +1,4 @@
-#include "stackexercises.h"
+#include "exercises.h"
 
 void removeEvenData(Stack* s)
 {

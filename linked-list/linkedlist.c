@@ -13,7 +13,6 @@ List* insert(List* l, int data)
     node->data = data;
 
     return node;
-
 }
 
 List* search(List* l, int data)
