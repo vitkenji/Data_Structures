@@ -1,5 +1,5 @@
 all:
-	gcc main.c queue.c queueexercises.c -o main
+	gcc main.c queue.c exercises.c -o main
 
 run: all
 	./main
