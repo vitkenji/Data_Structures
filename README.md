@@ -33,8 +33,7 @@ You also need **Make**, which usually comes with the compiler or can be installe
 ##  Running
 
 From inside any data structure folder (for example, `Stack/`), run the following command:
-
-`make run`
-
+- `make run` (Linux)
+- `mingw32-make run` (Windows)
 ## Collaborators
 - Vitor Kenji Zoppo Yamada
