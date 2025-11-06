@@ -14,7 +14,9 @@ This repository contains implementations of classic **data structures** in C, or
 - **Linked List**
 - **Priority Queue**
 - **Queue**
+- **Red-Black Tree**
 - **Stack**
+- **Trie**
 
 Each folder includes source files (`.c` and `.h`) and small test programs.
 
