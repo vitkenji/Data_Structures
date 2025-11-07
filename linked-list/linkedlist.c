@@ -24,13 +24,13 @@ List* search(List* l, int data)
         {
             if(t->data == data)
             {
-              printf("found");  return t;
+                return t;
             }
             t = t->next;
         }
         
     }
-    printf("not found");
+    printf("%d not found\n", data);
     return NULL;
 }
 

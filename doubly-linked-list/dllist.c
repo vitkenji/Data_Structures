@@ -14,7 +14,6 @@ DLList* insertBack(DLList* l, int data)
         node->prev = NULL;
         if(l != NULL){l->prev = node;}
         return node;
-
 }
 
 DLList* insertFront(DLList* l, int data)
@@ -51,21 +50,37 @@ DLList* search(DLList* l, int data)
     if(l != NULL)
     {
         DLList* t = l;
+        DLList* p = t;
         while(t != NULL)
         {
             if(t->data == data)
             {
-                printf("found");
                 return t;
             }
             t = t->next;
         }
     }
-    printf("not found");
+    printf("%d not found\n", data);
     return NULL;
 }
 
 DLList* removeData(DLList* l, int data)
 {
-
+    DLList* t = l;
+    while (t != NULL)
+    {
+        if(t->data == data)
+        {
+            if(t->prev != NULL)
+            {
+                t->prev->next = t->next;
+            }
+            if(t->next != NULL)
+            {
+                t->next->prev = t->prev;
+            }
+        }
+        t = t->next;
+    }
+    return l;
 }
