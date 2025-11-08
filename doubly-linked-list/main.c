@@ -1,19 +1,24 @@
 #include "dllist.h"
-
 int shouldInsertBack()
 {
     DLList* l = create();
-    l = insert(l, 10);
+    l = insertBack(l, 10);
     return l->data == 10;
 }
 
 int shouldInsertFront()
 {
     DLList* l = create();
-    l = insert(l, 10);
-    return l->data == 10;
+    l = insertBack(l, 10);
+    l = insertBack(l, 20);
+    l = insertFront(l, 30);
+    DLList* t = l;
+    while (t->next != NULL)
+    {
+        t = t->next;
+    }
+    return l->data == 20 && t->data == 30;
 }
-
 
 int shouldRemove()
 {
@@ -22,8 +27,8 @@ int shouldRemove()
     {
         l = insertFront(l, i * 10);
     }
-    l = removeData(l, 10);
-    return search(l, 10) == NULL;
+    l = removeData(l, 20);
+    return search(l, 20) == NULL;
 }
 
 int shouldSearch()
@@ -38,56 +43,64 @@ int shouldSearch()
 
 int fullTest()
 {
-   DLList* l = create();
+    DLList* l = create();
+    int passed = 1;
 
-    for (int i = 1; i <= 5; i++)
-    {
-        l = insert(l, i * 10);
-    }
+    l = insertBack(l, 10);
+    l = insertBack(l, 20);
+    l = insertBack(l, 30);
 
-    printList(l);
+    if (search(l, 10) == NULL || search(l, 20) == NULL || search(l, 30) == NULL)
+        passed = 0;
 
-    for (int i = 1; i <= 5; i++)
-    {
-        DLList* found = search(l, i * 10);
-        if (found == NULL || found->data != i * 10)
-            return 0;
-    }
-
+    l = removeData(l, 10);
     l = removeData(l, 20);
-    l = removeData(l, 40);
+    l = removeData(l, 30);
 
-    printList(l);
+    if (search(l, 10) != NULL || search(l, 20) != NULL || search(l, 30) != NULL)
+        passed = 0;
 
-    if (search(l, 20) != NULL) return 0;
-    if (search(l, 40) != NULL) return 0;
+    l = insertFront(l, 100);
+    l = insertFront(l, 200);
+    l = insertFront(l, 300);
 
-    if (search(l, 10) == NULL) return 0;
-    if (search(l, 30) == NULL) return 0;
-    if (search(l, 50) == NULL) return 0;
+    if (search(l, 100) == NULL || search(l, 200) == NULL || search(l, 300) == NULL)
+        passed = 0;
 
-    l = insert(l, 60);
-    l = insert(l, 70);
+    l = removeData(l, 100);
+    l = removeData(l, 200);
+    l = removeData(l, 300);
 
-    printList(l);
+    if (search(l, 100) != NULL || search(l, 200) != NULL || search(l, 300) != NULL)
+        passed = 0;
 
-    if (search(l, 60) == NULL) return 0;
-    if (search(l, 70) == NULL) return 0;
+    l = insertBack(l, 1);
+    l = insertFront(l, 2);
+    l = insertBack(l, 3);
+    l = removeData(l, 2);
+    l = insertFront(l, 4);
+    l = removeData(l, 1);
+    l = insertBack(l, 5);
 
-    return 1;  
+    if (search(l, 3) == NULL || search(l, 4) == NULL || search(l, 5) == NULL)
+        passed = 0;
+
+    if (search(l, 1) != NULL || search(l, 2) != NULL)
+        passed = 0;
+
+    return passed;
 }
-
+  
 int main()
 {
     int tests_passed = 0;
     int tests_failed = 0;
-    /*
     shouldInsertBack() == 1 ? tests_passed++ : tests_failed++;
     shouldInsertFront() == 1 ? tests_passed++ : tests_failed++;
-    shouldRemove() == 1 ? tests_passed++ : tests_failed++;
     shouldSearch() == 1 ? tests_passed++ : tests_failed++;
+    shouldRemove() == 1 ? tests_passed++ : tests_failed++;
     fullTest() == 1 ? tests_passed++ : tests_failed++;
-    */
+
     printf("%d Tests passed\n", tests_passed);
     printf("%d Tests failed\n", tests_failed);
 
