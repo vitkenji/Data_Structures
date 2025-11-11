@@ -43,4 +43,3 @@ void postOrder(Tree* t)
         printf("%d ", t->data);
     }
 }
-

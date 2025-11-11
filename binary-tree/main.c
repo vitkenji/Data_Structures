@@ -1,5 +1,6 @@
 #include "binary_tree.h"
 #include <string.h>
+#include "exercises.h"
 
 char* captureOutput(void (*traverse)(Tree*), Tree* t)
 {
